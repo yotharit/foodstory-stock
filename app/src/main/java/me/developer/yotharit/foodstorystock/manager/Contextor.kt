@@ -4,7 +4,7 @@ import android.content.Context
 
 class Contextor private constructor(context: Context) {
 
-    lateinit var mContext: Context
+    var mContext: Context
 
     init {
         mContext = context
@@ -14,7 +14,7 @@ class Contextor private constructor(context: Context) {
 
         var instance: Contextor? = null
 
-        fun getInstance(context: Context): Contextor {
+        fun initInstance(context: Context): Contextor {
             if (instance == null)
                 instance = Contextor(context)
             return instance!!
